@@ -11,9 +11,11 @@
 @interface AppDelegate ()
             
 @property (weak) IBOutlet NSWindow *window;
+@property (weak) IBOutlet NSArrayController *recipeArrayController;
+
 
 - (IBAction)saveAction:(id)sender;
-
+- (IBAction)addImage:(id)sender;
 
 @end
 
@@ -192,4 +194,30 @@
     return NSTerminateNow;
 }
 
+
+- (void)addImage:(id)sender {
+    id recipe = [self.recipeArrayController.selectedObjects lastObject];
+    if (!recipe) return;
+    
+    NSOpenPanel *openPanel = [NSOpenPanel openPanel];
+    openPanel.canChooseDirectories = NO;
+    openPanel.canCreateDirectories = NO;
+    openPanel.allowsMultipleSelection = NO;
+    
+    [openPanel beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
+        if (result == NSFileHandlingPanelCancelButton) return;
+        NSURL *path = [openPanel.URLs lastObject];
+        
+        // Build the path we want the file to be at
+        NSURL *destPath = [self applicationFilesDirectory];
+        NSString *guid = [[NSProcessInfo processInfo] globallyUniqueString];
+        destPath = [destPath URLByAppendingPathComponent:guid];
+        NSError *error = nil;
+        
+        [[NSFileManager defaultManager] copyItemAtURL:path toURL:destPath error:&error];
+        if (error) {
+            [NSApp presentError:error];
+        }
+    }];
+}
 @end
