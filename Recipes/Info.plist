@@ -30,5 +30,12 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>RecipeTypes</key>
+	<array>
+		<string>Cheese</string>
+		<string>Meat</string>
+		<string>Entrée</string>
+		<string>Fish</string>
+	</array>
 </dict>
 </plist>

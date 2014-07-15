@@ -764,7 +764,8 @@
                             </objectValues>
                         </comboBoxCell>
                         <connections>
-                            <binding destination="BOZ-T1-1eL" name="value" keyPath="selection.type" id="07Y-gk-I2o"/>
+                            <binding destination="wR8-rg-GLY" name="content" keyPath="arrangedObjects.name" id="HJL-jL-9l7"/>
+                            <binding destination="BOZ-T1-1eL" name="value" keyPath="selection.type" previousBinding="HJL-jL-9l7" id="S16-RD-Gga"/>
                         </connections>
                     </comboBox>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oRD-jd-7Js">

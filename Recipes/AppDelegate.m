@@ -124,6 +124,21 @@
     }
     _managedObjectContext = [[NSManagedObjectContext alloc] init];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    
+    // Special initialization.
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Type"];
+    NSError *error = nil;
+    NSArray *result = [_managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    NSAssert(error == nil, [error localizedDescription]);
+    
+    if (result.count) return _managedObjectContext;
+    
+    // Table hasn't been populated.
+    NSArray *types = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"RecipeTypes"];
+    for (NSString *type in types) {
+        NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:@"Type" inManagedObjectContext:_managedObjectContext];
+        [object setValue:type forKey:@"name"];
+    }
 
     return _managedObjectContext;
 }
@@ -209,15 +224,15 @@
         NSURL *path = [openPanel.URLs lastObject];
         
         // Build the path we want the file to be at
-        NSURL *destPath = [self applicationFilesDirectory];
         NSString *guid = [[NSProcessInfo processInfo] globallyUniqueString];
-        destPath = [destPath URLByAppendingPathComponent:guid];
+        NSURL *destPath = [[self applicationFilesDirectory] URLByAppendingPathComponent:guid];
+
         NSError *error = nil;
-        
         [[NSFileManager defaultManager] copyItemAtURL:path toURL:destPath error:&error];
         if (error) {
             [NSApp presentError:error];
         }
+        [recipe setValue:destPath forKey:@"imagePath"];
     }];
 }
 
