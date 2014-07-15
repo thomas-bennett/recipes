@@ -232,5 +232,20 @@
     return result;
 }
 
-
+- (NSArray *)allRecipesSortedByName {
+    NSSortDescriptor *nameSort = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sorters = @[nameSort];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    fetchRequest.sortDescriptors = sorters;
+    fetchRequest.entity = [NSEntityDescription entityForName:@"Recipe" inManagedObjectContext:self.managedObjectContext];
+    
+    NSError *error = nil;
+    NSArray *result = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (error) {
+        [NSApp presentError:error];
+        return nil;
+    }
+    
+    return result;
+}
 @end
