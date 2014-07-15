@@ -17,6 +17,7 @@
     <entity name="Type" syncable="YES">
         <attribute name="name" attributeType="String" syncable="YES"/>
     </entity>
+    <fetchRequest name="bigMeals" entity="Recipe" predicateString="serves >= 10"/>
     <elements>
         <element name="Recipe" positionX="-63" positionY="-18" width="128" height="133"/>
         <element name="RecipeIngredient" positionX="232" positionY="-0" width="128" height="103"/>

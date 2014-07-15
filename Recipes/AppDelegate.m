@@ -220,4 +220,17 @@
         }
     }];
 }
+
+- (NSArray*)retrieveBigMeals {
+    NSFetchRequest *fetchRequest = [self.managedObjectModel fetchRequestTemplateForName:@"bigMeals"];
+    NSError *error = nil;
+    NSArray *result = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (error) {
+        [NSApp presentError:error];
+        return nil;
+    }
+    return result;
+}
+
+
 @end
