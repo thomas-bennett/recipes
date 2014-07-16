@@ -97,9 +97,25 @@
     
     NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"Recipes.storedata"];
     NSPersistentStoreCoordinator *coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom];
-    if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]) {
-        [[NSApplication sharedApplication] presentError:error];
-        return nil;
+    NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption:@YES};
+    if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:options error:&error]) {
+
+        NSLog(@"%@:%s %@", [self class], _cmd, error.localizedDescription);
+        for (NSError *suberror in [error.userInfo valueForKey:NSDetailedErrorsKey]) {
+            NSLog(@"\t%@", suberror.localizedDescription);
+        }
+        
+        NSAlert *alert = [[NSAlert alloc] init];
+        alert.alertStyle = NSCriticalAlertStyle;
+        alert.messageText = @"Unable to load the recipes database";
+        alert.informativeText = [NSString stringWithFormat:@"The recipes database %@%@%@\n%@",
+                                 @"is either corrupt or was created by a newer ",
+                                 @"version of Grokking Recipes. Please contact ",
+                                 @"support to asssist with this error.\n\nError: ",
+                                 error.localizedDescription];
+        [alert addButtonWithTitle:@"Quit"];
+        [alert runModal];
+        exit(1);
     }
     _persistentStoreCoordinator = coordinator;
     

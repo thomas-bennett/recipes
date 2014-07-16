@@ -13,6 +13,7 @@
 		E231504B19707C1200F866D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E231504A19707C1200F866D0 /* Images.xcassets */; };
 		E231504E19707C1200F866D0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E231504C19707C1200F866D0 /* MainMenu.xib */; };
 		E231505A19707C1200F866D0 /* RecipesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E231505919707C1200F866D0 /* RecipesTests.m */; };
+		E27670951975FA0700E857E0 /* v1_to_v2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = E27670941975FA0700E857E0 /* v1_to_v2.xcmappingmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,12 +32,14 @@
 		E231504219707C1200F866D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E231504419707C1200F866D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E231504519707C1200F866D0 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E231504819707C1200F866D0 /* Recipes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Recipes.xcdatamodel; sourceTree = "<group>"; };
+		E231504819707C1200F866D0 /* v1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = v1.xcdatamodel; sourceTree = "<group>"; };
 		E231504A19707C1200F866D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E231504D19707C1200F866D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E231505319707C1200F866D0 /* RecipesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E231505819707C1200F866D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E231505919707C1200F866D0 /* RecipesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipesTests.m; sourceTree = "<group>"; };
+		E233B7691975A9DD00C2A513 /* v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = v2.xcdatamodel; sourceTree = "<group>"; };
+		E27670941975FA0700E857E0 /* v1_to_v2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = v1_to_v2.xcmappingmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,7 @@
 		E231503419707C1200F866D0 = {
 			isa = PBXGroup;
 			children = (
+				E27670941975FA0700E857E0 /* v1_to_v2.xcmappingmodel */,
 				E231503F19707C1200F866D0 /* Recipes */,
 				E231505619707C1200F866D0 /* RecipesTests */,
 				E231503E19707C1200F866D0 /* Products */,
@@ -216,6 +220,7 @@
 				E231504619707C1200F866D0 /* AppDelegate.m in Sources */,
 				E231504319707C1200F866D0 /* main.m in Sources */,
 				E231504919707C1200F866D0 /* Recipes.xcdatamodeld in Sources */,
+				E27670951975FA0700E857E0 /* v1_to_v2.xcmappingmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +409,7 @@
 				E231505F19707C1200F866D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E231506019707C1200F866D0 /* Build configuration list for PBXNativeTarget "RecipesTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +418,7 @@
 				E231506219707C1200F866D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -419,9 +426,10 @@
 		E231504719707C1200F866D0 /* Recipes.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E231504819707C1200F866D0 /* Recipes.xcdatamodel */,
+				E233B7691975A9DD00C2A513 /* v2.xcdatamodel */,
+				E231504819707C1200F866D0 /* v1.xcdatamodel */,
 			);
-			currentVersion = E231504819707C1200F866D0 /* Recipes.xcdatamodel */;
+			currentVersion = E233B7691975A9DD00C2A513 /* v2.xcdatamodel */;
 			path = Recipes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
