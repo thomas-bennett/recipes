@@ -14,6 +14,7 @@
 		E231504E19707C1200F866D0 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E231504C19707C1200F866D0 /* MainMenu.xib */; };
 		E231505A19707C1200F866D0 /* RecipesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E231505919707C1200F866D0 /* RecipesTests.m */; };
 		E27670951975FA0700E857E0 /* v1_to_v2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = E27670941975FA0700E857E0 /* v1_to_v2.xcmappingmodel */; };
+		E276709C1976E90300E857E0 /* RecipeIngredientToIngredient.m in Sources */ = {isa = PBXBuildFile; fileRef = E276709B1976E90300E857E0 /* RecipeIngredientToIngredient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,9 @@
 		E231505919707C1200F866D0 /* RecipesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipesTests.m; sourceTree = "<group>"; };
 		E233B7691975A9DD00C2A513 /* v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = v2.xcdatamodel; sourceTree = "<group>"; };
 		E27670941975FA0700E857E0 /* v1_to_v2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = v1_to_v2.xcmappingmodel; sourceTree = "<group>"; };
+		E27670991976050800E857E0 /* v3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = v3.xcdatamodel; sourceTree = "<group>"; };
+		E276709A1976E90300E857E0 /* RecipeIngredientToIngredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecipeIngredientToIngredient.h; path = Recipes/RecipeIngredientToIngredient.h; sourceTree = "<group>"; };
+		E276709B1976E90300E857E0 /* RecipeIngredientToIngredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipeIngredientToIngredient.m; path = Recipes/RecipeIngredientToIngredient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 		E231503419707C1200F866D0 = {
 			isa = PBXGroup;
 			children = (
+				E276709A1976E90300E857E0 /* RecipeIngredientToIngredient.h */,
+				E276709B1976E90300E857E0 /* RecipeIngredientToIngredient.m */,
 				E27670941975FA0700E857E0 /* v1_to_v2.xcmappingmodel */,
 				E231503F19707C1200F866D0 /* Recipes */,
 				E231505619707C1200F866D0 /* RecipesTests */,
@@ -218,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E231504619707C1200F866D0 /* AppDelegate.m in Sources */,
+				E276709C1976E90300E857E0 /* RecipeIngredientToIngredient.m in Sources */,
 				E231504319707C1200F866D0 /* main.m in Sources */,
 				E231504919707C1200F866D0 /* Recipes.xcdatamodeld in Sources */,
 				E27670951975FA0700E857E0 /* v1_to_v2.xcmappingmodel in Sources */,
@@ -427,9 +434,10 @@
 			isa = XCVersionGroup;
 			children = (
 				E233B7691975A9DD00C2A513 /* v2.xcdatamodel */,
+				E27670991976050800E857E0 /* v3.xcdatamodel */,
 				E231504819707C1200F866D0 /* v1.xcdatamodel */,
 			);
-			currentVersion = E233B7691975A9DD00C2A513 /* v2.xcdatamodel */;
+			currentVersion = E27670991976050800E857E0 /* v3.xcdatamodel */;
 			path = Recipes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
